@@ -1,12 +1,11 @@
-package Assertionss;
+package Handling_Dropdowns;
 
 import com.microsoft.playwright.*;
-import com.microsoft.playwright.options.AriaRole;
 
 import java.util.Collections;
 
-public class ToolTipAssertions {
-    public static void main(String[] args) throws InterruptedException {
+public class SingleSelectdropdown {
+    public static void main(String[] args) {
         try(Playwright playwright = Playwright.create()) {
             Browser browser = playwright.chromium().launch(
                     new BrowserType.LaunchOptions().setHeadless(false)
@@ -14,11 +13,15 @@ public class ToolTipAssertions {
             BrowserContext context = browser.newContext(
                     new Browser.NewContextOptions().setViewportSize(null));
             Page page = context.newPage();
-            page.navigate("https://jqueryui.com/tooltip/");
-            Thread.sleep(2000);
-            page.locator("[id='age']").hover();
-//            String tooltip = textfield.textContent();
-//            System.out.println(tooltip);
+            page.navigate("https://demo.automationtesting.in/Register.html");
+            /*
+            Seleccting dropdown using page.selectOption()
+             */
+            page.selectOption("#Skills","Java");
+            /*
+            Selecting dropdown using page.locator().selectOption()
+             */
+            page.locator("#yearbox").selectOption("1923");
         }
     }
 }
