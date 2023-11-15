@@ -19,7 +19,7 @@ public class AutosuggestionDropdown {
             autosuggestion_DB.fill("Banglore");
             /*
             wait for suggestions to be appear after that
-            locating the options and selects one
+            locates the options and selects one
              */
             page.waitForSelector("//li[contains(@class,'sc-iwsKbI')]/div/text[1]");
             List<ElementHandle> options = page.locator("//li[contains(@class,'sc-iwsKbI')]/div/text[1]").elementHandles();

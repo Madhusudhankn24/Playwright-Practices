@@ -2,7 +2,6 @@ package Assertionss;
 
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.assertions.PlaywrightAssertions;
-
 import java.util.Collections;
 
 public class PageTitleAssertions {
