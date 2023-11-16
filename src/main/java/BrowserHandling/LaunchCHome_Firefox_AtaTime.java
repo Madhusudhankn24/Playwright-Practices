@@ -16,11 +16,12 @@ public class LaunchCHome_Firefox_AtaTime {
             /*
             1-> launching chromium browsers
              */
-            int i = 0;
-            browsers[0] = playwright.chromium().launch(
-                    new BrowserType.LaunchOptions().setHeadless(false)
-                            .setChannel(Chromium_browsers[i])
-                            .setArgs(Collections.singletonList("--start-maximized")));
+            for (int i = 0; i < 2; i++) {
+                browsers[0] = playwright.chromium().launch(
+                        new BrowserType.LaunchOptions().setHeadless(false)
+                                .setChannel(Chromium_browsers[i])
+                                .setArgs(Collections.singletonList("--start-maximized")));
+            }
             /*
             2-> launching firefox browsers
              */
