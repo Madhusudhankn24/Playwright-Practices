@@ -2,6 +2,8 @@ package TakeScreenshots;
 
 import com.microsoft.playwright.*;
 
+import java.io.File;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Collections;
@@ -15,10 +17,13 @@ public class FullPageScreenshots {
             Page page = context.newPage();
             page.navigate("https://amazon.com");
             byte[] screenshots;
-            screenshots = page.screenshot(new Page.ScreenshotOptions().setFullPage(false));
+            /*
+            To capture entire page we need to use setfullpage
+             */
+            screenshots = page.screenshot(new Page.ScreenshotOptions().setFullPage(true));
             Path outputPath = Paths.get(".//src//main//resources//Screesnhots//full_page_screenshot1.png");
             try {
-                java.nio.file.Files.write(outputPath, screenshots);
+                Files.write(outputPath, screenshots);
                 System.out.println("Full-page screenshot saved to: " + outputPath.toString());
             } catch (Exception e) {
                 e.printStackTrace();
