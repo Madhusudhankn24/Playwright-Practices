@@ -20,7 +20,7 @@ public class CheckBox_complexWebTable {
              */
             Locator rows = page.locator("table#example tr");
             /*
-            In Dynamic values i need to check one row so that
+            In Dynamic values we need to check one row so that
             using scope we can get the entire row based on the value(text)
             from that we will select checkbox
              */
